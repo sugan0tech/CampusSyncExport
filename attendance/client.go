@@ -13,13 +13,13 @@ func ConnectToMongoDB() (*mongo.Client, error) {
 	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 
 	// Connect to MongoDB
-	client, err := mongo.Connect(context.Background(), clientOptions)
+	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
 		return nil, err
 	}
 
 	// Check the connection
-	err = client.Ping(context.Background(), nil)
+	err = client.Ping(context.TODO(), nil)
 	if err != nil {
 		return nil, err
 	}
