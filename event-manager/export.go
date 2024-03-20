@@ -59,10 +59,7 @@ func Export(students []Student, dates []AcamedicDate, classCode string) string {
 						sum++
 					}
 				}
-        fmt.Println("curr sum ",sum)
-        fmt.Println("curr working_days ",working_days)
 				percentage = float32(sum) / float32(working_days) * 100
-				fmt.Println(percentage)
 				f.SetCellValue("Sheet1", periods[i][0]+pos, fmt.Sprintf("%.2f", percentage))
 			}
 		}
