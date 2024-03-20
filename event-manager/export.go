@@ -50,6 +50,7 @@ func Export(students []Student, dates []AcamedicDate, classCode string) string {
 		final_percentage := 0.0
 		final_sum := 0
 		for i := 0; i < 7; i++ {
+      sum = 0
 			for _, date := range dates {
 				value, exists := student.AttendancePeriodSetMap[strconv.Itoa(date.ID)]
 				values := numberToBoolArray(value)
@@ -58,6 +59,8 @@ func Export(students []Student, dates []AcamedicDate, classCode string) string {
 						sum++
 					}
 				}
+        fmt.Println("curr sum ",sum)
+        fmt.Println("curr working_days ",working_days)
 				percentage = float32(sum) / float32(working_days) * 100
 				fmt.Println(percentage)
 				f.SetCellValue("Sheet1", periods[i][0]+pos, fmt.Sprintf("%.2f", percentage))
