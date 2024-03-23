@@ -11,7 +11,7 @@ import (
 )
 
 type RequestPayload struct {
-	ClassCode string    `json:"class_code" binding:"required"`
+	ClassCode string    `json:"classCode" binding:"required"`
 	From      string `json:"from" time_format:"2006-01-02" binding:"required"`
 	To        string `json:"to" time_format:"2006-01-02" binding:"required"`
 }
